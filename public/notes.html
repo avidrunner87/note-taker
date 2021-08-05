@@ -13,8 +13,60 @@
     <!-- Link to Local Stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-<body>
-    
+<body class="has-fixed-sidenav">
+    <header>
+        <div class="navbar-fixed navbar-overlay">
+            <nav class="navbar blue lighten-2">
+                <div class="nav-wrapper nav-margin">
+                    <a class="brand-logo">Note Taker</a>
+                    <a class="sidenav-trigger left" data-target="sideNavLeft">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-small-and-down">
+                        <li><a href="#" class="new-note"><i class="material-icons left">add</i>Add Note</a></li>
+                    </ul>
+                    <ul class="right hide-on-med-and-up">
+                        <li><a href="#" class="new-note"><i class="material-icons left">add</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+    </header>
+    <main class="main-margin">
+        <div class="row">
+            <div class="col s12 m5 l3 list-container">
+                <div class="row">
+                    <ul class="list-group"></ul>
+                </div>
+            </div>
+            <div class="col s12 m7 l9">
+                <div class="card blue-grey lighten-5 black-text">
+                    <div class="card-content">
+                        <span id="note-card-title" class="card-title">New Note</span>
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="Short title for the note" id="noteTitle" type="text">
+                                        <label for="noteTitle">Title</label>
+                                        <input id="noteID" type="hidden">
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <textarea placeholder="Details for the note" id="noteDescription" class="materialize-textarea"></textarea>
+                                        <label for="noteDescription">Description</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="btn waves-effect waves-light blue save-note disabled">Save<i class="material-icons left">save</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!-- Links to 3rd Party Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
