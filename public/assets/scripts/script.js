@@ -63,7 +63,7 @@ const renderNoteList = async (notes) => {
         divContentEl.classList.add('card-content');
 
         const spanEl = document.createElement('span');
-        spanEl.classList.add('card-title');
+        spanEl.classList.add('card-title', 'span-pointer');
         spanEl.innerText = text;
 
         if (delBtn) {
