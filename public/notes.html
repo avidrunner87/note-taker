@@ -9,17 +9,18 @@
     <!-- Links to 3rd Party Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Link to Local Stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-<body class="has-fixed-sidenav">
+<body>
     <header>
-        <div class="navbar-fixed navbar-overlay">
+        <div>
             <nav class="navbar blue lighten-2">
-                <div class="nav-wrapper nav-margin">
+                <div class="nav-wrapper">
                     <a href="/" class="brand-logo">Note Taker</a>
-                    <a class="sidenav-trigger left" data-target="sideNavLeft">
+                    <a href="#" class="sidenav-trigger left" data-target="notes-sideNav">
                         <i class="material-icons">menu</i>
                     </a>
                     <ul class="right hide-on-small-and-down">
@@ -31,16 +32,15 @@
                 </div>
             </nav>
         </div>
-        
     </header>
     <main class="main-margin">
         <div class="row">
-            <div class="col s12 m5 l3 list-container">
+            <div class="col l3 list-container hide-on-med-and-down">
                 <div class="row">
-                    <ul class="list-group"></ul>
+                    <ul id="notes-sideNav" class="list-group"></ul>
                 </div>
             </div>
-            <div class="col s12 m7 l9">
+            <div class="col s12 m12 l9">
                 <div class="card blue-grey lighten-5 black-text">
                     <div class="card-content">
                         <span id="note-card-title" class="card-title">New Note</span>
@@ -69,7 +69,9 @@
     </main>
 
     <!-- Links to 3rd Party Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 
     <!-- Link to Local Scripts -->
     <script src="./assets/scripts/script.js"></script>

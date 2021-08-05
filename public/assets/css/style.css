@@ -11,6 +11,10 @@
     margin: 20px 10px 0 10px;
 }
 
+nav.navbar {
+    padding: 0 20px;
+}
+
 .list-group {
     margin-block-start: 0em;
     margin-block-end: 0em;
@@ -24,4 +28,12 @@
 
 .span-pointer {
     cursor: pointer;
+}
+
+.navbar-overlay {
+    z-index: 1000 !important;
+}
+
+#notes-sideNav {
+    z-index: 1001 !important;
 }

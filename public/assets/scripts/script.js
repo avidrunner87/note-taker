@@ -12,6 +12,10 @@ if (window.location.pathname === '/notes') {
     noteList = document.querySelectorAll('.list-container .list-group');
 }
 
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+});
+
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
@@ -63,7 +67,7 @@ const renderNoteList = async (notes) => {
         divContentEl.classList.add('card-content');
 
         const spanEl = document.createElement('span');
-        spanEl.classList.add('card-title', 'span-pointer');
+        spanEl.classList.add('card-title', 'span-pointer', 'sidenav-close');
         spanEl.innerText = text;
 
         if (delBtn) {
@@ -95,12 +99,16 @@ const renderNoteList = async (notes) => {
     jsonNotes.forEach((note) => {
         const li = createLi(note.title);
         li.dataset.note = JSON.stringify(note);
-
         noteListItems.push(li);
+
     });
 
     if (window.location.pathname === '/notes') {
-        noteListItems.forEach((note) => noteList[0].append(note));
+        noteListItems.forEach((note) => {
+            noteList.forEach((el) => {
+                el.appendChild(note);
+            })
+        });
     }
 };
 
@@ -181,3 +189,13 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
+
+window.addEventListener("resize", function() {
+    if (window.innerWidth < 993) {
+        document.getElementById('').classList.add('sidenav');
+    };
+
+    if (window.innerWidth >= 993) {
+        document.getElementById('').classList.remove('sidenav');
+    };
+});

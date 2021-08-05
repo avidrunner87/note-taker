@@ -87,7 +87,6 @@ app.post('/api/notes', (req, res) => {
             );
         }
     });
-
 });
 
 // Delete a note in the db.json file
