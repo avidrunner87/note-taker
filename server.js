@@ -135,6 +135,5 @@ app.delete('/api/notes/:id', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    const port = server.address().port;
-    console.log(`Express is working on port ${port}`);
+    console.log(`Express is working on port ${PORT}`);
 });
