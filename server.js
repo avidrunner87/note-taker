@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const PORT = process.env.port || 3001;
+const PORT = process.env.port || 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -134,8 +134,7 @@ app.delete('/api/notes/:id', (req, res) => {
     });
 });
 
-app.listen(PORT, () =>
-    console.log(
-    `Launch the note taker app at http://localhost:${PORT}`
-    )
-);
+app.listen(PORT, () => {
+    const port = server.address().port;
+    console.log(`Express is working on port ${port}`);
+});
