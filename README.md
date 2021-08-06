@@ -47,7 +47,7 @@ I **WANT** to be able to write and save notes<br>
 **THEN** I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 
 ## Licenses
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/avidrunner87/team-profile-generator/blob/main/LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/avidrunner87/note-taker/blob/main/LICENSE.md)
 
 ## Technology
 ![HTML](https://img.shields.io/static/v1?label=html&message=34.2%&color=red)
