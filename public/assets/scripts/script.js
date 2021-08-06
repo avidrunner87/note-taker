@@ -8,12 +8,21 @@ if (window.location.pathname === '/notes') {
     noteTitle = document.querySelector('#noteTitle');
     noteText = document.querySelector('#noteDescription');
     saveNoteBtn = document.querySelector('.save-note');
-    newNoteBtn = document.querySelector('.new-note');
+    newNoteBtn = document.querySelectorAll('.new-note');
     noteList = document.querySelectorAll('.list-container .list-group');
 }
 
 $(document).ready(function(){
     $('.sidenav').sidenav();
+
+    if (window.innerWidth < 993) {
+        document.getElementById('notes-sideNav').classList.add('sidenav');
+    };
+
+    if (window.innerWidth >= 993) {
+        document.getElementById('notes-sideNav').classList.remove('sidenav');
+        document.getElementById('notes-sideNav').removeAttribute('style');
+    };
 });
 
 // activeNote is used to keep track of the note in the textarea
@@ -121,6 +130,7 @@ const handleNoteView = (e) => {
 
 const handleNewNoteView = (e) => {
     activeNote = {};
+    console.log('New Note Form');
     renderActiveNote();
 };
 
@@ -131,7 +141,7 @@ const renderActiveNote = () => {
         noteID.value = activeNote.id;
         noteDescription.value = activeNote.text;
     } else {
-        document.getElementById('note-card-title').innerText = 'Add Note';
+        document.getElementById('note-card-title').innerText = 'New Note';
         noteTitle.value = '';
         noteID.value = '';
         noteDescription.value = '';
@@ -183,7 +193,8 @@ const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 if (window.location.pathname === '/notes') {
     saveNoteBtn.addEventListener('click', handleNoteSave);
-    newNoteBtn.addEventListener('click', handleNewNoteView);
+    newNoteBtn[0].addEventListener('click', handleNewNoteView);
+    newNoteBtn[1].addEventListener('click', handleNewNoteView);
     noteTitle.addEventListener('keyup', handleRenderSaveBtn);
     noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
@@ -192,10 +203,11 @@ getAndRenderNotes();
 
 window.addEventListener("resize", function() {
     if (window.innerWidth < 993) {
-        document.getElementById('').classList.add('sidenav');
+        document.getElementById('notes-sideNav').classList.add('sidenav');
     };
 
     if (window.innerWidth >= 993) {
-        document.getElementById('').classList.remove('sidenav');
+        document.getElementById('notes-sideNav').classList.remove('sidenav');
+        document.getElementById('notes-sideNav').removeAttribute('style');
     };
 });
